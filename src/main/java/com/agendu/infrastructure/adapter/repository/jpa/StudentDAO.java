@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface StudentDAO extends JpaRepository<StudentEntity, Long>
 {
     StudentEntity findByEmail(String email);
+    StudentEntity findByEmailAndPassword(String email, String password);
 }

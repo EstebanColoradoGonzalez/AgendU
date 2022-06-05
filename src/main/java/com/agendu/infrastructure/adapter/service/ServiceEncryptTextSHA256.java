@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceEncryptTextSHA256 implements ServiceEncryptText
 {
-
     @Override
     public String encryptText(String text)
     {

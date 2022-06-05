@@ -11,25 +11,21 @@ import com.agendu.infrastructure.adapter.repository.jpa.StudentDAO;
 import com.agendu.infrastructure.adapter.repository.jpa.StudentRoleDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
-
 import static com.agendu.infrastructure.service.assembler.implementation.StudentAssemblerInfrastructureImplementation.getStudentAssembler;
 
 @Repository
 public class StudentRepositoryImplementation implements StudentRepository
 {
     @Autowired
-    private StudentDAO studentDAO;
+    StudentDAO studentDAO;
     @Autowired
-    private StudentRoleDAO studentRoleDAO;
+    StudentRoleDAO studentRoleDAO;
     @Autowired
-    private RoleDAO roleDAO;
+    RoleDAO roleDAO;
     @Autowired
-    private ServiceEncryptText serviceEncryptText;
+    ServiceEncryptText serviceEncryptText;
 
     @Override
     public List<StudentSummaryDTO> getAll()
@@ -60,10 +56,7 @@ public class StudentRepositoryImplementation implements StudentRepository
     public Long save(Student student)
     {
         var entity = getStudentAssembler().assembleEntityFromDomain(student);
-
         var roleId = saveStudentRole(entity.getRoles().get(0));
-
-
         var roles = this.studentRoleDAO.findAll().stream().toList();
         var filterRoles = roles.stream().filter(filter -> Objects.equals(filter.getId(), roleId)).toList();
 
@@ -110,5 +103,11 @@ public class StudentRepositoryImplementation implements StudentRepository
     public boolean exists(Long id)
     {
         return this.studentDAO.existsById(id);
+    }
+
+    @Override
+    public boolean login(String email, String password)
+    {
+        return ValidateObject.isNull(this.studentDAO.findByEmailAndPassword(email, password));
     }
 }

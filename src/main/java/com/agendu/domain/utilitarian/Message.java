@@ -47,6 +47,8 @@ public class Message
     public static final String SEMESTER_NAME_CHECK_PATTERN = "The name of a Semester must contain only letters and spaces.";
 
     public static final String STUDENT_EXISTS_WITH_EMAIL = "There is already a student with that email";
-
     public static final String STUDENT_CREATION_SUCCESSFUL = "The student was saved successful";
+    public static final String STUDENT_IS_UNAUTHORIZED = "This student is unauthorized";
+    public static final String WRONG_EMAIL_OR_PASSWORD = "Email or password is wrong";
+    public static final String LOGIN_SUCCESSFUL = "Login Successful";
 }

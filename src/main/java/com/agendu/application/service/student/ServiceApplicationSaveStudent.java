@@ -13,7 +13,7 @@ import java.util.List;
 public class ServiceApplicationSaveStudent
 {
     @Autowired
-    private ServiceSaveStudent serviceSaveStudent;
+    ServiceSaveStudent serviceSaveStudent;
 
     public Long save(StudentDTO student)
     {

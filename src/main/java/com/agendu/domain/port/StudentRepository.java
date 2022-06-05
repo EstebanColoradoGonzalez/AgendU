@@ -13,4 +13,5 @@ public interface StudentRepository
     Long modify(Long id, Student student);
     void delete(Long id);
     boolean exists(Long id);
+    boolean login(String email, String password);
 }
