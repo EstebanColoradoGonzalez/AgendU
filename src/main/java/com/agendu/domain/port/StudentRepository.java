@@ -10,8 +10,7 @@ public interface StudentRepository
     StudentSummaryDTO getById(Long id);
     StudentSummaryDTO getByEmail(String email);
     Long save(Student student);
-    Long modify(Long id, Student student);
+    Long update(Student student);
     void delete(Long id);
-    boolean exists(Long id);
     boolean login(String email, String password);
 }

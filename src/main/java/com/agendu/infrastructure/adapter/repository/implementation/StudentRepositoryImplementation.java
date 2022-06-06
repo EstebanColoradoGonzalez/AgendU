@@ -84,12 +84,8 @@ public class StudentRepositoryImplementation implements StudentRepository
     }
 
     @Override
-    public Long modify(Long id, Student student)
+    public Long update(Student student)
     {
-        var entity = getStudentAssembler().assembleEntityFromDomain(student);
-
-        entity.setId(id);
-
         return this.studentDAO.save(getStudentAssembler().assembleEntityFromDomain(student)).getId();
     }
 
@@ -97,12 +93,6 @@ public class StudentRepositoryImplementation implements StudentRepository
     public void delete(Long id)
     {
         this.studentDAO.deleteById(id);
-    }
-
-    @Override
-    public boolean exists(Long id)
-    {
-        return this.studentDAO.existsById(id);
     }
 
     @Override

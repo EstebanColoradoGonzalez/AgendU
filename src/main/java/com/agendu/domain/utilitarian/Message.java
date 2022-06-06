@@ -46,9 +46,16 @@ public class Message
     public static final String SEMESTER_NAME_CHECK_LENGTH_VALID = "The name of a Semester must contain a length between 1 and 100 characters.";
     public static final String SEMESTER_NAME_CHECK_PATTERN = "The name of a Semester must contain only letters and spaces.";
 
-    public static final String STUDENT_EXISTS_WITH_EMAIL = "There is already a student with that email";
-    public static final String STUDENT_CREATION_SUCCESSFUL = "The student was saved successful";
-    public static final String STUDENT_IS_UNAUTHORIZED = "This student is unauthorized";
-    public static final String WRONG_EMAIL_OR_PASSWORD = "Email or password is wrong";
-    public static final String LOGIN_SUCCESSFUL = "Login Successful";
+    public static final String STUDENT_EXISTS_WITH_EMAIL = "There is already a student with that email.";
+    public static final String STUDENT_CREATION_SUCCESSFUL = "The student was saved successful.";
+    public static final String STUDENT_UPDATE_SUCCESSFUL = "The student was updated successful.";
+    public static final String STUDENT_DELETE_SUCCESSFUL = "The student was deleted successful.";
+    public static final String STUDENTS_CONSULTED_SUCCESSFUL = "Students were consulted successful.";
+    public static final String STUDENT_CONSULTED_BY_EMAIL_SUCCESSFUL = "The student was consulted successful with the email " ;
+    public static final String STUDENT_CONSULTED_BY_ID_SUCCESSFUL = "The student was consulted successful with the ID ";
+    public static final String STUDENT_IS_UNAUTHORIZED = "This student is unauthorized.";
+    public static final String WRONG_EMAIL_OR_PASSWORD = "Email or password is wrong.";
+    public static final String LOGIN_SUCCESSFUL = "Login Successful.";
+
+    public static final String STUDENT_DOES_NOT_EXISTS_WITH_ID = "The user with this ID doesn't exists.";
 }
